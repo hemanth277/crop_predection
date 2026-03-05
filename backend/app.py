@@ -54,7 +54,7 @@ def identify_crop(image_file, crop_state):
             return f"🌾 Cached Crop Result:\n\n{result}", result
 
         model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash",
+            "gemini-pro-vision",
             system_instruction="You are an expert agricultural scientist."
         )
 
@@ -84,7 +84,7 @@ def ask_chatbot(message, crop_state):
     context = f"\nCrop Info:\n{crop_state}\n"
 
     model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        "gemini-pro",
         system_instruction="You are a farming advisor. Give direct practical answers."
     )
 
